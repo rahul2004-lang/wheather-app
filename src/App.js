@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import keys from "./keys";
+import keys from "./keys.json";
 
 const api = {
   key: keys.API_KEY,
