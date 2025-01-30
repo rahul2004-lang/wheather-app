@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!---------------  CSS  --------------------->
-    <link rel="stylesheet" href="App.css">
-    <title>Weather Web App</title>
-    <!---------------  IONICONS  --------------------->
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-</head>
-<body>
-    <div class="container">
-      <div class="search_box"> 
-        <input type="text" placeholder="Enter a city name" id="city" value="Bhubaneswar" autocomplete="off"/>
-        <button id="search"><ion-icon class="icon" name="search"></ion-icon></button>
-      </div>
-      <div id="show"></div>
-    </div>
-   <!---------------  SCRIPT  --------------------->
-   <script src="app.js"></script>  
-</body>   
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="./logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="PWA React Weather App"/>
+    <link rel="apple-touch-icon" href="./logo.png" />
+    <link rel="manifest" href="./manifest.json"/>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet"/>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      if('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./serviceworker.js')
+          .then(reg => console.log(reg.scope))
+          .catch(err => console.log(err))
+        })
+      }
+    </script>
+  </body>
 </html>
